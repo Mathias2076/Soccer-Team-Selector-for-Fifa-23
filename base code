@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Soccer Teams</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Random Soccer Team Selector</h1>
+
+  <button onclick="selectTeams()">Select Teams</button>
+
+  <div id="teamsDisplay"></div>
+
+  <script>
+    function selectTeams() {
+      const teams = ["Atlanta United", "Austin FC", "Charlotte FC", "Chicago Fire FC", "FC Cincinnati", "Colorado Rapids", "Columbus Crew", "D.C. United", "FC Dallas", "Houston Dynamo FC", "Sporting Kansas City", "LA Galaxy", "Los Angeles Football Club", "Inter Miami CF", "Minnesota United", "CF Montréal", "Nashville SC", "New England Revolution", "New York Red Bulls", "New York City FC", "Orlando City", "Philadelphia Union", "Portland Timbers", "Real Salt Lake", "San Jose Earthquakes", "Seattle Sounders FC", "St. Louis CITY SC", "Toronto FC", "Vancouver Whitecaps FC", "Arsenal", "Aston Villa", "Brentford", "Brighton and Hove Albion", "Bournemouth", "Burnley", "Chelsea", "Crystal Palace", "Everton", "Fulham", "Liverpool", "Luton Town", "Manchester City", "Manchester United", "Newcastle United", "Nottingham Forest", "Sheffield United", "Tottenham Hotspur", "West Ham United", "Wolverhampton Wanderers", "Real Madrid", "Girona", "Atletico Madrid", "Barcelona", "Athletic Bilbao", "Real Sociedad", "Real Betis", "Getafe", "Valencia", "Las Palmas", "Rayo Vallecano", "Osasuna", "Villarreal", "Real Mallorca", "Alaves", "Sevilla", "Celta Vigo", "Cadiz", "Granada", "Almeria", "Paris SG", "OGC Nice", "AS Monaco", "St. Brest", "Lille OSC", "Marseille", "RC Lens", "St. Reims", "Strasbourg", "St.Rennais", "Le Havre", "Montpellier", "FC Nantes", "FC Metz", "Lyon", "Toulouse", "FC Lorient", "Clermont", "Argentina", "Australia", "Austria", "Belgium", "Brazil", "Canada", "China PR", "Croatia", "Czech Republic", "Denmark", "England", "Finland", "France", "Germany", "Ghana", "Hungary", "Iceland", "Ireland", "Italy", "Mexico", "Morocco", "Netherlands", "New Zealand", "Northern Ireland", "Norway", "Poland", "Portugal", "Qatar", "Romania", "Scotland", "Spain", "Sweden", "Ukraine", "United States", "Wales"]; // Add more teams as needed
+      const randomTeam1 = teams[Math.floor(Math.random() * teams.length)];
+      let randomTeam2 = randomTeam1;
+      
+      // Make sure the second team is different from the first
+      while (randomTeam2 === randomTeam1) {
+        randomTeam2 = teams[Math.floor(Math.random() * teams.length)];
+      }
+
+      const teamsDisplay = document.getElementById("teamsDisplay");
+      teamsDisplay.innerHTML = `<p>Team 1: ${randomTeam1}</p><p>Team 2: ${randomTeam2}</p>`;
+    }
+  </script>
+
+</body>
+</html>
